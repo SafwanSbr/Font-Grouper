@@ -39,7 +39,6 @@ const Upload = ({ uploadedFonts, setUploadedFonts, onDelete }) => {
     handleFileUpload(file);
   };
 
-  // Load the font dynamically and apply it to a preview
   const loadFont = (fontName, fontUrl) => {
     const font = new FontFace(fontName, `url(${fontUrl})`);
     font

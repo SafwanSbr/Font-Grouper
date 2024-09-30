@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import GroupMaker from './Components/GroupMaker'
+import FontGroup from './Components/FontGroup';
 import Upload from './Components/Upload'
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <div>
-        <GroupMaker uploadedFonts={uploadedFonts}/>
         <Upload uploadedFonts={uploadedFonts} setUploadedFonts={setUploadedFonts} onDelete={onDelete}/>
+        <FontGroup uploadedFonts={uploadedFonts} />
       </div>
     </>
   )
