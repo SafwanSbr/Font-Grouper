@@ -4,11 +4,6 @@ import InputField from "./InputField";
 const GroupMaker = ({ uploadedFonts, addFontGroup }) => {
   const [fontArray, setFontArray] = useState([{ name: "", font: "" }]);
 
-  console.log(addFontGroup);
-  useEffect(() => {
-    console.log("addFontGroup:", addFontGroup);
-  }, [addFontGroup]);
-  
   const rowAdder = () => {
     setFontArray([...fontArray, { name: "", font: "" }]);
   };
@@ -18,7 +13,6 @@ const GroupMaker = ({ uploadedFonts, addFontGroup }) => {
     setFontArray(newFontGroup);
   };
 
-  // Handle font and name changes in the rows
   const handleFontChange = (index, field, value) => {
     setFontArray((prevFontGroup) => {
       const updatedGroup = [...prevFontGroup];
@@ -27,7 +21,6 @@ const GroupMaker = ({ uploadedFonts, addFontGroup }) => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const selectedFonts = fontArray.filter((group) => group.font !== "" && group.name !== "");
@@ -37,14 +30,12 @@ const GroupMaker = ({ uploadedFonts, addFontGroup }) => {
       return;
     }
 
-    // Pass the new font group to the parent (FontGroup)
-    console.log(addFontGroup);  // Should output the function if it's correctly passed
     addFontGroup(selectedFonts);
     setFontArray([{ name: "", font: "" }]); // Reset the form
   };
 
   return (
-    <div className="font-maker">
+    <div className="font-maker bg-white shadow-lg rounded-lg p-6">
       <h3 className="text-lg font-bold mb-4">Create Font Group</h3>
       <form onSubmit={handleSubmit}>
         {fontArray.map((group, index) => (
@@ -59,12 +50,12 @@ const GroupMaker = ({ uploadedFonts, addFontGroup }) => {
         ))}
 
         <div className="mb-4">
-          <button type="button" onClick={rowAdder} className="p-2 bg-blue-500 text-white rounded">
+          <button type="button" onClick={rowAdder} className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600">
             Add Row
           </button>
         </div>
 
-        <button type="submit" className="p-2 bg-green-500 text-white rounded">
+        <button type="submit" className="p-2 bg-green-500 text-white rounded hover:bg-green-600">
           Create Group
         </button>
       </form>

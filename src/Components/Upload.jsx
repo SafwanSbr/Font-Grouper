@@ -62,7 +62,7 @@ const Upload = ({ uploadedFonts, setUploadedFonts, onDelete }) => {
       {/* Upload box */}
       <div
         ref={dropBoxRef}
-        className="border-2 border-dashed w-full max-w-3xl border-gray-300 rounded p-6 text-center cursor-pointer hover:bg-gray-100"
+        className="border-2 border-dashed w-full max-w-3xl border-gray-300 rounded p-6 text-center cursor-pointer hover:bg-gray-100 transition-all duration-300"
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
         onDrop={onDrop}
@@ -92,12 +92,12 @@ const Upload = ({ uploadedFonts, setUploadedFonts, onDelete }) => {
             </thead>
             <tbody>
               {uploadedFonts.map((font, index) => (
-                <tr key={index} className="border-t">
+                <tr key={index} className="border-t hover:bg-gray-100 transition duration-300">
                   <td className="py-3 px-4">{font.name}</td>
-                  <td className="py-3 px-4" style={{ fontFamily: font.name }}>
+                  <td className="py-3 px-4 text-xl" style={{ fontFamily: font.name }}>
                     Example of the font
                   </td>
-                  <td className="py-3 px-4 text-red-600 hover:cursor-pointer hover:text-red-800" onClick={() => onDelete(font.name)}>
+                  <td className="py-3 px-4 text-red-600 hover:cursor-pointer hover:text-red-800 transition" onClick={() => onDelete(font.name)}>
                     Delete
                   </td>
                 </tr>

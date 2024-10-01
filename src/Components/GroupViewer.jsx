@@ -18,20 +18,16 @@ const GroupViewer = ({ fontGroups, onDeleteGroup }) => {
           <tbody>
             {fontGroups.map((group, i) => (
               <tr key={i} className="bg-gray-50">
-                {/* Name of the Group */}
                 <td className="border px-4 py-2">Group {i + 1}</td>
 
-                {/* List of Fonts */}
                 <td className="border px-4 py-2">
                   {group.map((g) => g.name).join(", ")}
                 </td>
 
-                {/* Count of Fonts */}
                 <td className="border px-4 py-2 text-center">
                   {group.length}
                 </td>
 
-                {/* Delete Button */}
                 <td className="border px-4 py-2 text-center">
                   <button
                     className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"

@@ -25,7 +25,7 @@ const InputField = ({ index, font, availableFonts, handleFontChange, onRemove })
       </select>
 
       {index > 0 && (
-        <button type="button" onClick={() => onRemove(index)} className="ml-2 p-2 bg-red-500 text-white rounded">
+        <button type="button" onClick={() => onRemove(index)} className="ml-2 p-2 bg-red-500 text-white rounded hover:bg-red-600">
           Remove
         </button>
       )}
